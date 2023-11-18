@@ -45,4 +45,10 @@ const IssuesPage = async () => {
   );
 };
 
+// export const dynamic = 'force-dynamic'
+// dynamic rendering (disable caching)
+// everytime the user updates the issue, it will be shown on the page immediately)
+
+export const revalidate = 0;
+
 export default IssuesPage;
