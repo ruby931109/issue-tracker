@@ -4,6 +4,7 @@ import { Issue, User } from "@prisma/client";
 import { Select } from "@radix-ui/themes";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
+import { nullable } from "zod";
 
 const AssigneeSelect = ({ issue }: { issue: Issue }) => {
   const {
@@ -34,7 +35,7 @@ const AssigneeSelect = ({ issue }: { issue: Issue }) => {
       <Select.Content>
         <Select.Group>
           <Select.Label>Suggestions</Select.Label>
-          <Select.Item value="">Unassigned</Select.Item>
+          {/* <Select.Item value="">Unassigned</Select.Item> */}
           {users?.map((user) => (
             <Select.Item key={user.id} value={user.id}>
               {user.name}
