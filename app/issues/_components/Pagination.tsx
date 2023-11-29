@@ -30,7 +30,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
   return (
     <Flex align="center" gap="2">
       <Text size="2">
-        Page {currentPage} of {pageSize}
+        Page {currentPage} of {pageCount}
       </Text>
       <Button
         color="gray"
@@ -59,7 +59,7 @@ const Pagination = ({ itemCount, pageSize, currentPage }: Props) => {
       <Button
         color="gray"
         variant="soft"
-        disabled={currentPage === 1}
+        disabled={currentPage === pageCount}
         onClick={() => changePage(pageCount)}
       >
         <DoubleArrowRightIcon />
