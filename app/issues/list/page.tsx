@@ -4,6 +4,7 @@ import Pagination from "../_components/Pagination";
 import IssueActions from "./IssueActions";
 import IssueTable, { IssueQuery, columnNames } from "./IssueTable";
 import { Flex } from "@radix-ui/themes";
+import { Metadata } from "next";
 
 interface Props {
   searchParams: IssueQuery;
@@ -44,10 +45,14 @@ const IssuesPage = async ({ searchParams }: Props) => {
   );
 };
 
-// export const dynamic = 'force-dynamic'
+export const dynamic = "force-dynamic";
 // dynamic rendering (disable caching)
 // everytime the user updates the issue, it will be shown on the page immediately)
+// export const revalidate = 0;
 
-export const revalidate = 0;
+export const metadata: Metadata = {
+  title: "Issue Tracker - Issue List",
+  description: "View all project issues",
+};
 
 export default IssuesPage;
